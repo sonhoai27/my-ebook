@@ -1,12 +1,12 @@
 import * as React from "react";
-import ClientHeader from "../client-shared/Header";
-import Footer from "../client-shared/Footer";
+import ClientHeader from "../Header";
+import Footer from "../Footer";
 import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 import ItemPage from "../../DynamicPage/item";
-import EbookPreview from "./com/preview";
-import Customer from "./com/customer";
-import OptionEbook from "./com/optionEbook";
+import EbookPreview from "./preview";
+import Customer from "./customer";
+import OptionEbook from "./optionEbook";
 import { reListPageUI } from "../../../reducers/init";
 const IDPAGE = 5;
 const listCom = {

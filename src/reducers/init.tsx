@@ -12,14 +12,6 @@ const initialState = {
   isDanger: false,
   resListPageUI: []
 };
-const PAGEURL = API + "page";
-export const reListPageUI = idPage => async dispatch => {
-  const result = await dispatch({
-    type: ACTION_TYPES.API_LIST_PAGE_UI,
-    payload: axios.get(PAGEURL + "/detail/" + idPage)
-  });
-  return result;
-};
 export default (state = initialState, action) => {
   switch (action.type) {
     case ACTION_TYPES.IS_DANGER: {
@@ -61,6 +53,14 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
+};
+const PAGEURL = API + "page";
+export const reListPageUI = idPage => async dispatch => {
+  const result = await dispatch({
+    type: ACTION_TYPES.API_LIST_PAGE_UI,
+    payload: axios.get(PAGEURL + "/detail/" + idPage)
+  });
+  return result;
 };
 export const reIsDanger = status => async dispatch => {
   const result = await dispatch({

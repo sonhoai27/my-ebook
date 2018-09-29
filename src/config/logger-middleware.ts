@@ -3,7 +3,7 @@ import { BASEURL } from "./const";
 export default () => next => action => {
     const { type, payload } = action;
     // @ts-ignore
-    if(BASEURL != "/"){
+    if(BASEURL === "/"){
         console.groupCollapsed(type);
         try {
             console.log('Payload:', payload)

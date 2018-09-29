@@ -1,5 +1,5 @@
 import * as React from "react";
-import { RESOURCE } from "../../../../config/const";
+import { RESOURCE } from "../../../config/const";
 declare var $: any;
 declare var Swiper: any;
 class EbookPreview extends React.Component {

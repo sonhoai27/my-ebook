@@ -1,29 +1,26 @@
 import * as React from "react";
-import SearchBar from "./SearchBar";
-import { BASEURL } from "../../../config/const";
+import { BASEURL } from "../../config/const";
 
 interface IState {
-  isShowingMenu: boolean,
-  isShowingSearch: boolean
+  isShowingMenu: boolean;
 }
 class ClientHeader extends React.Component<{}, IState> {
   constructor(props) {
     super(props);
     this.state = {
-      isShowingMenu: false,
-      isShowingSearch: false
-    }
+      isShowingMenu: false
+    };
   }
-  showMenu = ()=> {
-    if(this.state.isShowingMenu === false){
-      document.body.style.overflowY = 'hidden'
-    }else {
-      document.body.style.overflowY = 'auto'
+  showMenu = () => {
+    if (this.state.isShowingMenu === false) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
     }
     this.setState({
       isShowingMenu: !this.state.isShowingMenu
-    })
-  }
+    });
+  };
   render() {
     return (
       <>
@@ -65,41 +62,42 @@ class ClientHeader extends React.Component<{}, IState> {
         <nav id="desktop-nav" className="clearfix">
           <div className="header-container">
             <div>
-            <div className="mobile-nav nav-item hidden-md hidden-lg" onClick={this.showMenu}>
-              <a id="hamburger">
-                <span />
-                <span />
-                <span />
-              </a>
-            </div>
-            <ul className="nav-logo">
-              <li>
-                <a href={BASEURL}>
-                  <img src="https://www.tonyrobbins.com/wp-content/themes/tonyrobbins2016/images/tr-logo-blk-on-wht.svg" />
+              <div
+                className="mobile-nav nav-item hidden-md hidden-lg"
+                onClick={this.showMenu}
+              >
+                <a id="hamburger">
+                  <span />
+                  <span />
+                  <span />
                 </a>
-              </li>
-            </ul>
-            <div className="nav-right search search-header-icon">
-                <div className="nav-item left" onClick={()=> {
-                  this.setState({
-                    isShowingSearch: !this.state.isShowingSearch
-                  })
-                }}>
-                  <a id="search">
-                    <i className="fa fa-fw fa-lg fa-search" />
-                  </a>
-                </div>
               </div>
+              <ul className="nav-logo">
+                <li>
+                  <a href={BASEURL}>
+                    <img src="https://www.tonyrobbins.com/wp-content/themes/tonyrobbins2016/images/tr-logo-blk-on-wht.svg" />
+                  </a>
+                </li>
+              </ul>
             </div>
             <div className="main-nav-wrapper">
-              <ul id="menu-main-nav" className={'nav-link hidden-xs hidden-sm '+(this.state.isShowingMenu ? 'show': '')}>
+              <ul
+                id="menu-main-nav"
+                className={
+                  "nav-link hidden-xs hidden-sm " +
+                  (this.state.isShowingMenu ? "show" : "")
+                }
+              >
                 <li className="menu-item">
                   <a>
                     Giới thiệu <i className="fa fa-angle-down" />
                   </a>
                   <ul className="menu-sub">
                     <li className="menu-item">
-                      <a title="Ask Tony Anything" href={BASEURL+'page/gioi-thieu'}>
+                      <a
+                        title="Ask Tony Anything"
+                        href={BASEURL + "page/gioi-thieu"}
+                      >
                         Về Mr.Share
                       </a>
                     </li>
@@ -113,7 +111,7 @@ class ClientHeader extends React.Component<{}, IState> {
                     <li className="menu-item">
                       <a
                         title="About Tony Robbins"
-                        href={BASEURL+'page/khoa-hoc'}
+                        href={BASEURL + "page/khoa-hoc"}
                       >
                         Tất cả khóa học
                       </a>
@@ -121,9 +119,7 @@ class ClientHeader extends React.Component<{}, IState> {
                   </ul>
                 </li>
                 <li className="menu-item">
-                  <a title="Store">
-                    Lịch sự kiện
-                  </a>
+                  <a title="Store">Lịch sự kiện</a>
                 </li>
                 <li className="menu-item">
                   <a title="Experiences">
@@ -131,14 +127,17 @@ class ClientHeader extends React.Component<{}, IState> {
                   </a>
                   <ul className="menu-sub">
                     <li className="menu-item">
-                      <a title="All Upcoming Events" href={BASEURL+'page/video'}>
+                      <a
+                        title="All Upcoming Events"
+                        href={BASEURL + "page/video"}
+                      >
                         Tất cả video
                       </a>
                     </li>
                   </ul>
                 </li>
                 <li className="menu-item">
-                  <a title="Coaching" href={BASEURL+'page/sach'}>
+                  <a title="Coaching" href={"http://sotay.songxungdang.com"}>
                     Sổ tay
                   </a>
                 </li>
@@ -148,8 +147,8 @@ class ClientHeader extends React.Component<{}, IState> {
                   </a>
                   <ul className="menu-sub">
                     <li className="menu-item">
-                      <a title="Read All Blogs" href={BASEURL+'page/blog'}>
-                       Tất cả blog
+                      <a title="Read All Blogs" href={BASEURL + "page/blog"}>
+                        Tất cả blog
                       </a>
                     </li>
                   </ul>
@@ -160,27 +159,18 @@ class ClientHeader extends React.Component<{}, IState> {
                   </a>
                   <ul className="menu-sub">
                     <li className="menu-item">
-                      <a title="Read All Blogs" href={BASEURL+'page/qua-tang'}>
-                       Tất cả quà tặng
+                      <a
+                        title="Read All Blogs"
+                        href={BASEURL + "page/qua-tang"}
+                      >
+                        Tất cả quà tặng
                       </a>
                     </li>
                   </ul>
                 </li>
               </ul>
             </div>
-            <div className="nav-right search search-header-icon">
-              <div className="nav-item hidden-xs hidden-sm left" onClick={()=> {
-                  this.setState({
-                    isShowingSearch: !this.state.isShowingSearch
-                  })
-                }}>
-                <a id="search">
-                  <i className="fa fa-fw fa-lg fa-search" />
-                </a>
-              </div>
-            </div>
           </div>
-          { this.state.isShowingSearch ? <SearchBar/> : ''}
         </nav>
       </>
     );

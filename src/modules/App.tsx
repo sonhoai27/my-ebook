@@ -1,7 +1,14 @@
 import * as React from "react";
-import { LoadingPage } from "./client/client-shared/LoadingPage";
-import Ebook from "./client/ebook/ebook";
-class App extends React.Component{
+import { LoadingPage } from "./addons/LoadingPage";
+import Ebook from "./addons/ebook/ebook";
+import { connect } from "react-redux";
+import NotifyDanger from "./shared/notifyDanger";
+import NotifySuccess from "./shared/notifySuccess";
+interface IProps {
+  isSuccess: any;
+  isDanger: any;
+}
+class App extends React.Component<IProps, {}>{
   constructor(props) {
     super(props);
   }
@@ -10,7 +17,7 @@ class App extends React.Component{
     setTimeout(() => {
       // @ts-ignore
       document.getElementById("ui-loading").style.display = "none";
-    }, 0);
+    },1500);
   }
   render() {
     return (
@@ -21,8 +28,21 @@ class App extends React.Component{
         <div id="ui-loading">
           <LoadingPage />
         </div>
+        <div className="jq-toast-wrap top-right">
+        {this.props.isDanger ? <NotifyDanger/> : ""}
+        {this.props.isSuccess ? <NotifySuccess/> : ""}
+        </div>
       </>
     );
   }
 }
-export default App
+const mapStateToProps = storeState => ({
+  isSuccess: storeState.reInit.isSuccess,
+  isDanger: storeState.reInit.isDanger
+});
+const mapDispatchToProps = {
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

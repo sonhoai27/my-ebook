@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { reOrderEbook } from "../reEbook";
-import { reIsDanger, reIsSuccess } from "../../../../reducers/init";
+import { reOrderEbook } from "./reEbook";
+import { reIsDanger, reIsSuccess } from "../../../reducers/init";
 
 interface IProps {
   price: number;
@@ -39,8 +39,8 @@ class OrderEbook extends React.Component<IProps, IState> {
     };
   }
   componentDidUpdate(preProps) {
+    console.log(this.props.resOrderEbook);
     if (this.props.resOrderEbook != preProps.resOrderEbook) {
-      console.log(this.props.resOrderEbook.status);
       if (this.props.resOrderEbook.status === 200) {
         this.props.reIsSuccess(true);
         setTimeout(() => {
@@ -193,7 +193,7 @@ class OrderEbook extends React.Component<IProps, IState> {
 }
 
 const mapStateToProps = storeState => ({
-  resOrderEbook: storeState.reOrderEbook.resOrderEbook
+  resOrderEbook: storeState.reEbook.resOrderEbook
 });
 const mapDispatchToProps = {
   reOrderEbook,

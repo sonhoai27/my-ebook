@@ -1,7 +1,7 @@
 import * as React from "react";
 import Slider from "react-slick";
-import { RESOURCE } from "../../../../config/const";
 import { Helmet } from "react-helmet";
+import { RESOURCE } from "../../../config/const";
 const settings = {
   dots: true,
   infinite: true,
