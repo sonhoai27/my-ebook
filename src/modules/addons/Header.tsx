@@ -80,7 +80,7 @@ class ClientHeader extends React.Component<{}, IState> {
                 </li>
               </ul>
             </div>
-            <div className="main-nav-wrapper">
+            <div className="main-nav-wrapper" style={{float: 'right'}}>
               <ul
                 id="menu-main-nav"
                 className={

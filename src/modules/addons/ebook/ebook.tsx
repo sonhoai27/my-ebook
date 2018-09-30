@@ -8,11 +8,13 @@ import EbookPreview from "./preview";
 import Customer from "./customer";
 import OptionEbook from "./optionEbook";
 import { reListPageUI } from "../../../reducers/init";
+import Social from "../Social";
 const IDPAGE = 5;
 const listCom = {
   EBOOKPREVIEW: <EbookPreview />,
   CUSTOMER: <Customer />,
-  ORDEREBOOK: <OptionEbook />
+  ORDEREBOOK: <OptionEbook />,
+  SOCIAL: <Social/>
 };
 interface IProps {
   resListPageUI: any;
@@ -63,7 +65,7 @@ class EbookLadingPage extends React.Component<IProps, {}> {
           />
         </Helmet>
         <ClientHeader />
-        <div className="row">
+        <div className="col-xs-12 content-ebook">
           <ItemPage coms={listCom} items={this.props.resListPageUI.list} />
         </div>
         <Footer />
