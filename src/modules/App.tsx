@@ -22,7 +22,7 @@ class App extends React.Component<IProps, {}>{
   render() {
     return (
       <>
-        <div className="margin-top">
+        <div>
           <Ebook/>
         </div>
         <div id="ui-loading">

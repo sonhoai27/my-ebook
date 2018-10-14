@@ -1,5 +1,4 @@
 import * as React from "react";
-import ClientHeader from "../Header";
 import Footer from "../Footer";
 import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
@@ -64,7 +63,6 @@ class EbookLadingPage extends React.Component<IProps, {}> {
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           />
         </Helmet>
-        <ClientHeader />
         <div className="col-xs-12 content-ebook">
           <ItemPage coms={listCom} items={this.props.resListPageUI.list} />
         </div>
