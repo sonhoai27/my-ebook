@@ -14,21 +14,8 @@ class Footer extends React.Component {
                 <h2>Vui Lòng Liên Hệ Để Tham Gia Chương Trình Sớm Nhất:</h2>
                 <h2>Nguyễn Minh Chí - Sống Xứng Đáng</h2>
               </div>
-              <div className="col-sm-6">
-                <div>
-                  <span className="fa fa-mobile-phone" />
-                  &nbsp;0977545374
-                </div>
-                <div>
-                  <span className="fa fa-inbox" />
-                  &nbsp;info.songxungdang@gmail.com
-                </div>
-                <div>
-                  <span className="fa fa-location-arrow" />
-                  &nbsp;26/3 Phan Chu Trinh, Hiệp Phú, Quận 9, Tp.HCM
-                </div>
-              </div>
-              <div className="col-sm-6">
+              <div className="col-sm-2"></div>
+              <div className="col-sm-4">
                 <div>
                   <a
                     href="https://www.facebook.com/NguyenMinhChi.MrShare/"
@@ -57,6 +44,21 @@ class Footer extends React.Component {
                   </a>
                 </div>
               </div>
+              <div className="col-sm-4">
+                <div>
+                  <span className="fa fa-mobile-phone" />
+                  &nbsp;0977545374
+                </div>
+                <div>
+                  <span className="fa fa-inbox" />
+                  &nbsp;info.songxungdang@gmail.com
+                </div>
+                <div>
+                  <span className="fa fa-location-arrow" />
+                  &nbsp;26/3 Phan Chu Trinh, Hiệp Phú, Quận 9, Tp.HCM
+                </div>
+              </div>
+              <div className="col-sm-2"></div>
             </div>
           </div>
         </div>
